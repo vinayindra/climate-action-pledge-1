@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Climate Action Pledge</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Take the Climate Action Pledge!</h1>
+        <p>Every action counts. Shape a greener future for all.</p>
+        <button onclick="document.getElementById('pledgeForm').scrollIntoView({behavior: 'smooth'});">Take the Pledge</button>
+    </section>
+
+    <!-- KPIs Section -->
+    <section class="kpis">
+        <h2>Pledge Progress</h2>
+        <div id="kpi-stats">
+            <div>Total Pledges: <span id="totalPledges">0</span> / 1,000,000</div>
+            <div>Students: <span id="studentsCount">0</span></div>
+            <div>Professionals: <span id="prosCount">0</span></div>
+            <div>Others: <span id="otherCount">0</span></div>
+        </div>
+    </section>
+
+    <!-- Why Section -->
+    <section class="why">
+        <h2>Why Take Climate Action?</h2>
+        <p>Your pledge, combined with thousands of others, creates a powerful movement for a sustainable world. Make your actions count and inspire others!</p>
+    </section>
+
+    <!-- Pledge Form -->
+    <section class="form-section" id="pledgeForm">
+        <h2>Climate Action Pledge Form</h2>
+        <form id="pledge" autocomplete="off" onsubmit="submitPledge(event)">
+            <label class="details">Name: <input type="text" id="name" required></label>
+            <label class="details">Email: <input type="email" id="email" required></label>
+            <label class="details">Mobile: <input type="text" id="mobile" required></label>
+            <label class="details">State: <input type="text" id="state"></label>
+            <label class="details">Profile:
+                <select id="profile">
+                    <option value="Student">Student</option>
+                    <option value="Professional">Professional</option>
+                    <option value="Other">Other</option>
+                </select>
+            </label>
+            <fieldset>
+                <legend>Select Your Climate Commitments (choose any):</legend>
+                <label class="commitments"><input type="checkbox" value="Reduce plastic">Reduce plastic</label>
+                <label class="commitments"><input type="checkbox" value="Save water">Save water</label>
+                <label class="commitments"><input type="checkbox" value="Switch off unused lights">Switch off unused lights</label>
+                <label class="commitments"><input type="checkbox" value="Plant a tree">Plant a tree</label>
+                <label class="commitments"><input type="checkbox" value="Use public transport">Use public transport</label>
+                <label class="commitments"><input type="checkbox" value="Avoid fast fashion">Avoid fast fashion</label>
+                <label class="commitments"><input type="checkbox" value="Compost waste">Compost waste</label>
+                <label class="commitments"><input type="checkbox" value="Educate others">Educate others</label>
+                <label class="commitments"><input type="checkbox" value="Eat less meat">Eat less meat</label>
+            </fieldset>
+            <div class="privacy-note">
+                *Email and mobile are required for validation only. Details never shown publicly.
+            </div>
+            <button type="submit">Pledge & Get Certificate</button>
+        </form>
+    </section>
+
+    <!-- Certificate -->
+    <div id="certificate" class="certificate" style="display: none;">
+        <h2>Congratulations, <span id="certName"></span>!</h2>
+        <p>You are <b>Cool Enough to Care!</b></p>
+        <p>❤️ <span id="certHearts"></span></p>
+        <button onclick="document.getElementById('certificate').style.display='none';">Close</button>
+    </div>
+
+    <!-- Pledge Wall -->
+    <section class="wall">
+        <h2>Public Pledge Wall</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th><th>Name</th><th>Date</th><th>State</th><th>Profile</th><th>Love for Planet</th>
+                </tr>
+            </thead>
+            <tbody id="pledgeWall"></tbody>
+        </table>
+    </section>
+
+    <script src="main.js"></script>
+</body>
+</html>
