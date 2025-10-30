@@ -1,0 +1,16 @@
+body { font-family: Arial, sans-serif; margin: 0; background: #f5f7f8; }
+.hero, .kpis, .form-section, .why, .wall { padding: 2em; text-align: center; }
+.hero { background: #d0eee6; }
+button { padding: 0.6em 1.4em; background: #2200aa; color: white; border: none; border-radius: 3px; }
+.kpis { background: #e2eaff; }
+.commitments, fieldset { display: flex; flex-wrap: wrap; justify-content: space-evenly; margin: 1em 0; }
+.details{ display: block; margin: 1em 0; }
+input, select { margin: 0.5em 0; padding: 0.5em; width: 50%; }
+.certificate { position: fixed; top: 20%; left: 30%; background: #fffbe5; border: 2px solid #4beea6; padding: 2em; z-index: 999; }
+.wall table { width: 100%; border-collapse: collapse; }
+.wall th, .wall td { border: 1px solid #888; padding: 0.5em; }
+.privacy-note { color: #934600; font-size: 0.95em; margin: 1em 0; }
+@media (max-width: 600px) {
+    .certificate { left: 5%; width: 90%; }
+    input, select { width: 90%; }
+}
